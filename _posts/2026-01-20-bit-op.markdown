@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "Java常见项目问题"
+title:        "Java位运算技巧"
 author:       "qinzheng"
 header-style: text
 catalog:      true
