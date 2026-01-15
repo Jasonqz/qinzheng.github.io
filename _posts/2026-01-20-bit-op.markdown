@@ -88,7 +88,7 @@ boolean f = ((x ^ y) < 0); // false
 
 看个图就很容易理解了：
 
-![Image](../post_images/2026-01-20/index1.png)
+![Image](/_posts/post_images/2026-01-20/index1.png/)
 
 其核心逻辑就是，`n - 1`一定可以消除最后一个 1，同时把其后的 0 都变成 1，这样再和`n`做一次`&`运算，就可以仅仅把最后一个 1 变成 0 了。
 
@@ -96,7 +96,7 @@ boolean f = ((x ^ y) < 0); // false
 
 这是力扣第 191 题「位 1 的个数」：
 
-![Image](../post_images/2026-01-20/leetcode-191.png)
+![Image](../../../../post_images/2026-01-20/leetcode-191.png)
 
 就是让你返回`n`的二进制表示中有几个 1。因为`n & (n - 1)`可以消除最后一个 1，所以可以用一个循环不停地消除 1 同时计数，直到`n`变成 0 为止。
 
@@ -142,7 +142,7 @@ boolean isPowerOfTwo(int n) {
 
 这是力扣第 136 题「只出现一次的数字」：
 
-![Image](../post_images/2026-01-20/leetcode-136.png)
+![Image](/_posts/post_images/2026-01-20/leetcode-136.png)
 
 对于这道题目，我们只要把所有数字进行异或，成对儿的数字就会变成 0，落单的数字和 0 做异或还是它本身，所以最后异或的结果就是只出现一次的元素：
 
@@ -160,7 +160,7 @@ int singleNumber(int[] nums) {
 
 这是力扣第 268 题「丢失的数字」：
 
-![Image](../post_images/2026-01-20/leetcode-268.png)
+![Image](/_posts/post_images/2026-01-20/leetcode-268.png)
 
 给一个长度为`n`的数组，其索引应该在`[0,n)`，但是现在你要装进去`n + 1`个元素`[0,n]`，那么肯定有一个元素装不下嘛，请你找出这个缺失的元素。
 
