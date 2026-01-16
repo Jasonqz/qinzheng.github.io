@@ -88,7 +88,7 @@ boolean f = ((x ^ y) < 0); // false
 
 看个图就很容易理解了：
 
-![Image](/img/post_images/2026-01-20/index1.png)
+![Image](/img/post_images/2026-01-15/index1.png)
 
 其核心逻辑就是，`n - 1`一定可以消除最后一个 1，同时把其后的 0 都变成 1，这样再和`n`做一次`&`运算，就可以仅仅把最后一个 1 变成 0 了。
 
@@ -96,7 +96,7 @@ boolean f = ((x ^ y) < 0); // false
 
 这是力扣第 191 题「位 1 的个数」：
 
-![Image](/img/post_images/2026-01-20/leetcode-191.png)
+![Image](/img/post_images/2026-01-15/leetcode-191.png)
 
 就是让你返回`n`的二进制表示中有几个 1。因为`n & (n - 1)`可以消除最后一个 1，所以可以用一个循环不停地消除 1 同时计数，直到`n`变成 0 为止。
 
@@ -142,7 +142,7 @@ boolean isPowerOfTwo(int n) {
 
 这是力扣第 136 题「只出现一次的数字」：
 
-![Image](/img/post_images/2026-01-20/leetcode-136.png)
+![Image](/img/post_images/2026-01-15/leetcode-136.png)
 
 对于这道题目，我们只要把所有数字进行异或，成对儿的数字就会变成 0，落单的数字和 0 做异或还是它本身，所以最后异或的结果就是只出现一次的元素：
 
@@ -160,7 +160,7 @@ int singleNumber(int[] nums) {
 
 这是力扣第 268 题「丢失的数字」：
 
-![Image](/img/post_images/2026-01-20/leetcode-268.png)
+![Image](/img/post_images/2026-01-15/leetcode-268.png)
 
 给一个长度为`n`的数组，其索引应该在`[0,n)`，但是现在你要装进去`n + 1`个元素`[0,n]`，那么肯定有一个元素装不下嘛，请你找出这个缺失的元素。
 
@@ -200,11 +200,11 @@ int missingNumber(int[] nums) {
 
 而这道题索就可以通过这些性质巧妙算出缺失的那个元素，比如说`nums = [0,3,1,4]`：
 
-![Image](https://mmbiz.qpic.cn/sz_mmbiz_jpg/gibkIz0MVqdHMGIvrHjg24ickazQ8gFMRRBfJLxmgnW57EHGXoKom5x4DFPqic2aPpVNtujWoIayZXDFcJPaaEftw/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=5)
+![Image](/img/post_images/2026-01-15/index2.png)
 
 为了容易理解，我们假设先把索引补一位，然后让每个元素和自己相等的索引相对应：
 
-![Image](https://mmbiz.qpic.cn/sz_mmbiz_jpg/gibkIz0MVqdHMGIvrHjg24ickazQ8gFMRRxic19h2N5bVmN9EIFTD7zkZCL0FKGnfCZg8MoC6OSCBSJfxKZ2nHNmg/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=6)
+![Image](/img/post_images/2026-01-15/index3.png)
 
 这样做了之后，就可以发现除了缺失元素之外，所有的索引和元素都组成一对儿了，现在如果把这个落单的索引 2 找出来，也就找到了缺失的那个元素。
 
@@ -222,8 +222,6 @@ int missingNumber(int[] nums) {
     return res;
 }
 ```
-
-![Image](https://mmbiz.qpic.cn/sz_mmbiz_jpg/gibkIz0MVqdHMGIvrHjg24ickazQ8gFMRR3rBupomKZ3hRhc0F3H32PXJoPUKFxAml5TjatOU7ATib5cqrJiabKxTA/640?wx_fmt=jpeg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=7)
 
 由于异或运算满足交换律和结合律，所以总是能把成对儿的数字消去，留下缺失的那个元素。
 
